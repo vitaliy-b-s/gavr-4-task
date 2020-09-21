@@ -1,23 +1,30 @@
 * {
   box-sizing: border-box;
 }
+/* Общая обертка приложения */
 .app__wrap {
   display: flex;
   margin: 5% auto;
   height: 800px;
   width: 80%;
 }
+
+/* Обертка списка фильмов */
 .catalog__wrap {
   margin: 50px 0px 0px 3%;
   width: 30%;
   height: 650px;
 }
+
+/* Обертка карточки */
 .content__wrap {
   border: 1px solid #000;
   margin: 50px 50px 0px 7%;
   width: 60%;
   height: 650px;
 }
+
+/* Поле поиска и список */
 .search-field {
   margin: 0px 0px 0px 3%;
   border: 1px solid #000;
@@ -36,6 +43,8 @@
   height: 520px;
   padding: 0px;
 }
+
+/* Кнопки добавления */
 .buttons__wrap {
   width: 100%;
   display: flex;
@@ -46,4 +55,32 @@
   margin: 0px 30px;
   height: 30px;
   width: 25%;
+}
+/* Форма добавления позиции */
+.adding-form__wrap {
+  margin: auto;
+  display: none;
+}
+.adding-form {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 60%;
+  border: 1px solid #000;
+  margin: 20px auto;
+}
+
+/* Элементы формы */
+.label-title {
+  margin-top: 20px;
+}
+
+.film-description,
+.film-note {
+  height: 100px;
+  resize: none;
+}
+
+.submit-button {
+  margin-top: 20px;
 }

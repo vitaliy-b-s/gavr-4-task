@@ -1,15 +1,9 @@
-class Film {
-  constructor(name, des, note, img) {
-    this.name = name;
-    this.des = des;
-    this.note = note;
-    this.img = img;
-  }
-}
+import { Film } from './film.js'
 
 function createFilm() {
-  let name = document.forms.mainForm.title.value;
-  /*Остальные свойства */
-
-  let film = new Film(`${name}`, `${des}`, `${note}`, `${image}`);
+    let name = document.forms.mainForm.title.value;
+    let description = document.forms.mainForm.des.value;
+    let note = document.forms.mainForm.note.value;
+    let film = new Film(name, description, note);
+    console.log(film);
 }

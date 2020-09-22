@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="app__wrap">
-      <div class="catalog__wrap">
-        <div class="search-field"></div>
-        <div class="item-list">
-          <ul class="items-list"></ul>
-          <div class="buttons__wrap">
-            <button class="adding-movie btn" onclick="showForm()">
-              Добавить
-            </button>
-            <button class="deleting-movie btn">Удалить</button>
-          </div>
+        <div class="catalog__wrap">
+            <div class="search-field"></div>
+            <div class="item-list">
+                <ul class="items-list"></ul>
+                <div class="buttons__wrap">
+                    <button class="adding-movie btn" onclick="showForm()">Добавить</button>
+                    <button class="deleting-movie btn" onclick="createFilm()">Удалить</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="content__wrap">
-        <div class="adding-form__wrap" id="addForm">
-          <form class="adding-form" name="my">
-            <label class="label-title" for="title"
-              ><b>Название фильма</b></label
-            >
-            <input type="text" name="title" required />
+        <div class="content__wrap">
+            <div class="adding-form__wrap" id="addForm">
+                <form class="adding-form" name="mainForm">
+                    <label class="label-title" for="title"><b>Название фильма</b></label>
+                    <input type="text" name="title" required />
 
-            <label class="label-title" for="des"><b>Описание фильма</b></label>
-            <textarea class="description" name="des" required></textarea>
+                    <label class="label-title" for="des"><b>Описание фильма</b></label>
+                    <textarea class="description" name="des" required></textarea>
 
-            <label class="label-title" for="note"><b>Примечание</b></label>
-            <textarea class="note" name="note"></textarea>
+                    <label class="label-title" for="note"><b>Примечание</b></label>
+                    <textarea class="note" name="note"></textarea>
 
-            <label class="label-title" for="photo"><b>Фото</b></label>
-            <input type="file" name="photo" accept="image/*,image/jpeg" />
+                    <label class="label-title" for="photo"><b>Фото</b></label>
+                    <input type="file" name="photo" accept="image/*,image/jpeg" />
 
-            <button type="submit" class="submit-button" onclick="test()">
-              Создать
-            </button>
-          </form>
+                    <button type="submit" class="submit-button">Создать</button>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
     <script src="./javacript/script.js"></script>
-  </body>
+    <script type="module" src="/javacript/input.js"></script>
+
+</body>
+
 </html>

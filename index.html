@@ -13,32 +13,37 @@
         <div class="item-list">
           <ul class="items-list"></ul>
           <div class="buttons__wrap">
-            <button class="adding-movie btn" onclick="showForm()">Добавить</button>
+            <button class="adding-movie btn" onclick="showForm()">
+              Добавить
+            </button>
             <button class="deleting-movie btn">Удалить</button>
           </div>
         </div>
       </div>
       <div class="content__wrap">
-        <div class="adding-form__wrap" id ="addForm">
-          <form class="adding-form">
-            <label class = "label-title" for="film-title"><b>Название фильма</b></label>
-            <input type="text" name="film-title" required />
+        <div class="adding-form__wrap" id="addForm">
+          <form class="adding-form" name="my">
+            <label class="label-title" for="title"
+              ><b>Название фильма</b></label
+            >
+            <input type="text" name="title" required />
 
-            <label class = "label-title" for="film-des"><b>Описание фильма</b></label>
-            <textarea class ="film-description" name="film-des" required  ></textarea>
+            <label class="label-title" for="des"><b>Описание фильма</b></label>
+            <textarea class="description" name="des" required></textarea>
 
-            <label class = "label-title" for="note"><b>Примечание</b></label>
-            <textarea class = "film-note" name="note"></textarea>
+            <label class="label-title" for="note"><b>Примечание</b></label>
+            <textarea class="note" name="note"></textarea>
 
-            <label class = "label-title" for="photo"><b>Фото</b></label>
-            <input type="file" name="photo" accept="image/*,image/jpeg"/>
+            <label class="label-title" for="photo"><b>Фото</b></label>
+            <input type="file" name="photo" accept="image/*,image/jpeg" />
 
-
-            <input class = "submit-button" type="submit" value="Добавить"></p>
+            <button type="submit" class="submit-button" onclick="test()">
+              Создать
+            </button>
           </form>
         </div>
       </div>
     </div>
-  <script src="./javacript/script.js"></script>
+    <script src="./javacript/script.js"></script>
   </body>
 </html>

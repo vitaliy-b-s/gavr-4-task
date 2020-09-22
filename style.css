@@ -58,16 +58,18 @@
 }
 /* Форма добавления позиции */
 .adding-form__wrap {
-  margin: auto;
+  margin: 20px auto;
   display: none;
+  border: 1px solid #000;
+  height: 500px;
+  width: 60%;
 }
 .adding-form {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 60%;
-  border: 1px solid #000;
-  margin: 20px auto;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
 }
 
 /* Элементы формы */
@@ -75,8 +77,8 @@
   margin-top: 20px;
 }
 
-.film-description,
-.film-note {
+.description,
+.note {
   height: 100px;
   resize: none;
 }

@@ -1,9 +1,9 @@
 let listOfMovies = [];
 
 function addMovie(movie) {
-    listOfMovies.push(movie)
+  listOfMovies.push(movie);
 }
 
 function deleteMovie(movie) {
-    listOfMovies.pop(movie)
+  listOfMovies.pop(movie);
 }

@@ -7,3 +7,5 @@ function createFilm() {
     let film = new Film(name, description, note);
     console.log(film);
 }
+
+document.getElementById("bn").addEventListener('click', createFilm)

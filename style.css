@@ -1,107 +1,149 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 /* Общая обертка приложения */
 
 .app__wrap {
-    display: flex;
-    margin: auto;
-    height: 800px;
-    width: 80%;
+  display: flex;
+  margin: auto;
+  height: 800px;
+  width: 80%;
 }
-
 
 /* Обертка списка фильмов */
 
 .catalog__wrap {
-    margin: 50px 0px 0px 3%;
-    width: 30%;
-    height: 480px;
+  margin: 50px 0px 0px 3%;
+  width: 30%;
+  height: 600px;
 }
-
 
 /* Обертка карточки */
 
 .content__wrap {
-    border: 1px solid #000;
-    margin: 50px 50px 0px 7%;
-    width: 60%;
-    height: 530px;
+  border: 1px solid #000;
+  margin: 50px 50px 0px 7%;
+  width: 60%;
+  height: 650px;
 }
-
 
 /* Поле поиска и список */
 
 .search-field {
-    margin: 0px 0px 0px 3%;
-    border: 1px solid #000;
-    width: 100%;
-    height: 50px;
+  margin: 0px 0px 0px 3%;
+  border: 1px solid #000;
+  width: 100%;
+  height: 50px;
 }
 
 .item-list {
-    margin: 10px 0px 0px 3%;
-    border: 1px solid #000;
-    width: 100%;
-    height: 470px;
+  margin: 10px 0px 0px 3%;
+  border: 1px solid #000;
+  width: 100%;
+  height: 590px;
 }
 
 .items-list {
-    display: block;
-    width: 100%;
-    height: 390px;
-    padding: 0px;
+  display: block;
+  width: 100%;
+  height: 510px;
+  padding: 0px;
 }
-
 
 /* Кнопки добавления */
 
 .buttons__wrap {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-    margin: 0px 30px;
-    height: 30px;
+  margin: 0px 30px;
+  height: 30px;
 }
-
 
 /* Форма добавления позиции */
 
 .adding-form__wrap {
-    margin: 20px auto;
-    display: none;
-    border: 1px solid #000;
-    height: 500px;
-    width: 60%;
+  margin: 20px auto;
+  display: none;
+  border: 1px solid #000;
+  height: 500px;
+  width: 60%;
 }
 
 .adding-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: auto;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
 }
-
 
 /* Элементы формы */
 
 .label-title {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .description,
 .note {
-    height: 100px;
-    resize: none;
+  height: 100px;
+  resize: none;
 }
 
 .submit-button {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+/* Список фильмов в боковом меню*/
+
+.film-in-list {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+/*карточка фильма в главном меню*/
+
+.film-cart__wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.film-title__wrap {
+  height: 50px;
+  width: 80%;
+  border: 1px solid #000;
+  margin: 20px auto;
+}
+
+.film-title {
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.film-image__wrap {
+  height: 250px;
+  width: 250px;
+  margin: 20px auto;
+  border: 1px solid #000;
+}
+
+.film-description {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  border: 1px solid #000;
+}
+
+.film-note {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  border: 1px solid #000;
 }

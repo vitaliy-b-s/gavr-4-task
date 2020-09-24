@@ -1,8 +1,8 @@
 export class Film {
-    constructor(name, des, note, img) {
-        this.name = name;
-        this.des = des;
-        this.note = note;
-        this.img = img;
-    }
+  constructor(name, description, note, image) {
+    this.name = name;
+    this.description = description;
+    this.note = note;
+    this.image = image;
+  }
 }

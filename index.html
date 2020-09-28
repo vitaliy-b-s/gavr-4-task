@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="app__wrap">
-      <div class="catalog__wrap">
-        <div class="search-field"></div>
-        <div class="item-list">
-          <ul class="items-list"></ul>
-          <div class="buttons__wrap">
-            <button class="adding-movie btn" onclick="showForm()">
+        <div class="catalog__wrap">
+            <div class="search-field"></div>
+            <div class="item-list">
+                <ul class="items-list"></ul>
+                <div class="buttons__wrap">
+                    <button class="adding-movie btn" onclick="showForm()">
               Добавить
             </button>
-            <button class="deleting-movie btn" id="delete-film">Удалить</button>
-          </div>
+                    <button class="deleting-movie btn" id="delete-film">Удалить</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="content__wrap">
-        <div class="adding-form__wrap" id="addForm">
-          <form class="adding-form" name="mainForm">
-            <label class="label-title" for="title"
-              ><b>Название фильма</b></label
+        <div class="content__wrap">
+            <div class="adding-form__wrap" id="addForm">
+                <form class="adding-form" name="mainForm">
+                    <label class="label-title" for="title"><b>Название фильма</b></label
             >
             <input type="text" name="title" required />
 
@@ -39,38 +39,33 @@
             ></textarea>
 
             <label class="label-title" for="note"><b>Примечание</b></label>
-            <textarea class="note" name="note"></textarea>
+                    <textarea class="note" name="note"></textarea>
 
-            <label class="label-title" for="image"><b>Фото</b></label>
-            <input type="file" name="image" accept="image/*,image/jpeg" />
+                    <label class="label-title" for="image"><b>Фото</b></label>
+                    <input type="file" name="image" accept="image/*,image/jpeg" />
 
-            <input
-              type="button"
-              value="Создать"
-              class="create-button"
-              id="create-film"
-            />
-          </form>
-        </div>
+                    <input type="button" value="Создать" class="create-button" id="create-film" />
+                </form>
+            </div>
 
-        <div class="film-cart__wrap">
-          <div class="film-title__wrap">
-            <h1 class="film-title">Властелин колец</h1>
-          </div>
-          <div class="film-image__wrap">
-            <img class="film-image" src="" alt="" />
-          </div>
-          <label for="film-description">Описание</label>
-          <textarea name="film-description" class="film-description">
-Героическое фентези</textarea
+            <div class="film-cart__wrap">
+                <div class="film-title__wrap">
+                    <h1 class="film-title"></h1>
+                </div>
+                <div class="film-image__wrap">
+                    <img class="film-image" />
+                </div>
+                <label for="film-description">Описание</label>
+                <textarea name="film-description" class="film-description"></textarea
           >
           <label for="film-note">Примечание</label>
-          <textarea class="film-note">Смотреть обязательно</textarea>
+          <textarea class="film-note"></textarea>
+            </div>
         </div>
-      </div>
     </div>
     <script src="./javacript/script.js"></script>
     <script type="module" src="./javacript/data.js"></script>
     <script type="module" src="/javacript/input.js"></script>
-  </body>
+</body>
+
 </html>

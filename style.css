@@ -69,10 +69,13 @@
 
 .adding-form__wrap {
   margin: 20px auto;
+  position: absolute;
   display: none;
   border: 1px solid #000;
   height: 500px;
-  width: 60%;
+  background-color: aqua;
+  width: 25%;
+  left: 53%;
 }
 
 .adding-form {

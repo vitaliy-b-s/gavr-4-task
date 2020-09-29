@@ -1,36 +1,33 @@
-let listOfMovies = [];
+import { Film } from "./film.js";
 
-listOfMovies[0] = {
-    name: "Властелин колец",
-    description: "Героическое фентези",
-    note: "Смотреть всем",
-    image: "./picturedatabase/lotr.jpg",
-    id: "1",
-};
-
-listOfMovies[1] = {
-    name: "Гарри Поттер",
-    description: "Сойдет",
-    note: "В принципе сойдет",
-    image: "./picturedatabase/gp.jpg",
-    id: "2",
-};
+let listOfMovies = [
+  new Film(
+    "1",
+    "Властелин колец",
+    "Сказания о Средиземье — это хроника Великой войны за Кольцо, войны, длившейся не одну тысячу лет.",
+    "Смотреть обязательно",
+    "./picturedatabase/lotr.jpg"
+  ),
+  new Film(
+    "2",
+    "Гарри Поттер",
+    "Серия фильмов, основанных на книгах о Гарри Поттере английской писательницы Дж. К. Роулинг.",
+    "Хорошее кино",
+    "./picturedatabase/gp.jpg"
+  ),
+];
 
 function addMovie(film) {
-    listOfMovies.push(film);
+  listOfMovies.push(film);
 }
-export { addMovie };
 
 function deleteMovie(movie) {
-    listOfMovies.pop(movie);
+  listOfMovies.pop(movie);
 }
 
 function getFilms() {
-    return listOfMovies.slice();
+  return listOfMovies.slice();
 }
-export { getFilms };
 
-function show() {
-    console.log(listOfMovies);
-}
-export { show };
+
+export { addMovie, deleteMovie, getFilms};

@@ -45,10 +45,58 @@
 }
 
 .items-list {
-  display: block;
+  display: f;
   width: 100%;
   height: 460px;
   overflow: auto;
+  padding: 10px;
+}
+
+.film-in-list {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.film-in-list:hover {
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.image-in-list {
+  width: 30%;
+  height: auto;
+  max-height: 100px;
+  padding: 5px;
+}
+.button-div {
+  opacity: 0;
+}
+
+.film-in-list:hover > .button-div {
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.delete-button,
+.edit-button {
+  margin: 0px 10px;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+.delete-button {
+  background-image: url(./picturedatabase/close.png);
+}
+
+.edit-button {
+  background-image: url(./picturedatabase/edit.png);
 }
 
 /* Кнопки добавления */

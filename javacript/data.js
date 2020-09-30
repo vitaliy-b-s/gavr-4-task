@@ -29,5 +29,4 @@ function getFilms() {
   return listOfMovies.slice();
 }
 
-
-export { addMovie, deleteMovie, getFilms};
+export { addMovie, deleteMovie, getFilms };

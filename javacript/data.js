@@ -30,4 +30,9 @@ function getFilms() {
   return listOfFilms.slice();
 }
 
-export { addFilm, deleteFilm, getFilms };
+function replaceFilm(film) {
+  let indexOfDeletingFilm = listOfFilms.findIndex((item) => item.id == film);
+  listOfFilms.splice(indexOfDeletingFilm - 1, 1, film);
+}
+
+export { addFilm, deleteFilm, getFilms, replaceFilm };

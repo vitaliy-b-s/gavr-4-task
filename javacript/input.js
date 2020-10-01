@@ -1,6 +1,7 @@
 import { Film } from "./film.js";
 import { addFilm, deleteFilm } from "./data.js";
 import { getFilms } from "./data.js";
+import { replaceFilm } from "./data.js";
 
 let counter = 3;
 
@@ -70,6 +71,7 @@ function createFilm() {
 }
 
 function addToSidebar() {
+  document.getElementById("main-list").innerHTML = "";
   getFilms().forEach((item) => {
     const img = document.createElement("img");
     const li = document.createElement("li");
@@ -79,17 +81,12 @@ function addToSidebar() {
     const buttonDiv = document.createElement("div");
     const delButton = document.createElement("button");
     const editButton = document.createElement("button");
-    const divId = document.createElement("div");
 
     li.className = "film-in-list";
     let listOfFilm = document.getElementById("main-list");
     li.setAttribute("data-id", item.id);
     li.addEventListener("click", renderCartFilm);
     listOfFilm.appendChild(li);
-
-    divId.id = "id-div";
-    li.appendChild(divId);
-    divId.setAttribute("data-id", item.id);
 
     img.className = "image-in-list";
     img.setAttribute("data-id", item.id);
@@ -141,7 +138,6 @@ function deleteFilmFromList(event) {
   deleteFilm(film);
   let deletedLi = event.target.parentNode.parentNode;
   document.getElementById("main-list").removeChild(deletedLi);
-  console.log(document.querySelector(".save-button").dataset.id);
 }
 
 function editCart(event) {
@@ -149,7 +145,10 @@ function editCart(event) {
     (item) => item.id == event.target.dataset.id
   );
 
+  document.querySelector(".id-div").innerHTML = chosenFilm.id;
+
   document.querySelector(".new-url").style = "display: block;";
+  document.querySelector(".new-url").value = chosenFilm.image;
   document.querySelector(".save-button").style = "display: block;";
 
   document.body.querySelector(".film-title").removeAttribute("readonly");
@@ -166,8 +165,36 @@ function editCart(event) {
 }
 
 function saveChanges(event) {
-  
+  let chosenFilm = getFilms().find(
+    (item) => item.id == document.querySelector(".id-div").innerHTML
+  );
+  chosenFilm.name = document.body.querySelector(".film-title").value;
+  chosenFilm.description = document.body.querySelector(
+    ".film-description"
+  ).innerHTML;
+  chosenFilm.note = document.body.querySelector(".film-note").innerHTML;
+  chosenFilm.image = document.body.querySelector(".new-url").value;
+  chosenFilm.id = document.querySelector(".id-div").innerHTML;
+
+  replaceFilm(chosenFilm);
+  addToSidebar();
+
+  document.querySelector(".new-url").style = "display:none;";
+  document.querySelector(".save-button").style = "display:none;";
+
+  document.body.querySelector(".film-title").readOnly = true;
+  document.body.querySelector(".film-title").style =
+    "border: 1px solid black; background-color:white";
+
+  document.body.querySelector(".film-description").readOnly = true;
+  document.body.querySelector(".film-description").style =
+    "border: 1px solid black; background-color:white";
+
+  document.body.querySelector(".film-note").readOnly = true;
+  document.body.querySelector(".film-note").style =
+    "border: 1px solid black; background-color:white";
 }
 
 document.addEventListener("DOMContentLoaded", addToSidebar);
 document.getElementById("create-film").addEventListener("click", createFilm);
+document.querySelector(".save-button").addEventListener("click", saveChanges);

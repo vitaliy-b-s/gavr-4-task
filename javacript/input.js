@@ -66,7 +66,7 @@ function createFilm() {
   buttonDiv.appendChild(editButton);
 
   document.querySelector(".id-div").innerHTML = film.id;
-
+  document.getElementById("main-form").reset();
   counter++;
 }
 
@@ -126,9 +126,9 @@ function addToSidebar() {
 function renderCartFilm(e) {
   let chosenFilm = getFilms().find((item) => item.id == e.target.dataset.id);
   document.body.querySelector(".film-title").value = chosenFilm.name;
-  document.body.querySelector(".film-description").innerHTML =
+  document.body.querySelector(".film-description").value =
     chosenFilm.description;
-  document.body.querySelector(".film-note").innerHTML = chosenFilm.note;
+  document.body.querySelector(".film-note").value = chosenFilm.note;
   document.body.querySelector(".film-image").src = chosenFilm.image;
 }
 

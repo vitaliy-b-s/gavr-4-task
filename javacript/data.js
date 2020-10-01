@@ -31,8 +31,8 @@ function getFilms() {
 }
 
 function replaceFilm(film) {
-  let indexOfDeletingFilm = listOfFilms.findIndex((item) => item.id == film);
-  listOfFilms.splice(indexOfDeletingFilm - 1, 1, film);
+  let indexOfDeletingFilm = listOfFilms.findIndex((item) => item.id == film.id);
+  listOfFilms.splice(indexOfDeletingFilm, 1, film);
 }
 
 export { addFilm, deleteFilm, getFilms, replaceFilm };

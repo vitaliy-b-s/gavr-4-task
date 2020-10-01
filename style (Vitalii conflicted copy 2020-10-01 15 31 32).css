@@ -32,14 +32,14 @@
 
 .search-field {
   margin: 0px 0px 0px 3%;
-  border: 1px solid black;
+  border: 1px solid #000;
   width: 100%;
   height: 30px;
 }
 
 .item-list {
   margin: 10px 0px 0px 3%;
-  border: 1px solid black;
+  border: 1px solid #000;
   width: 100%;
   height: 560px;
 }
@@ -66,10 +66,8 @@
 .film-in-list:hover {
   border: 1px solid #000;
   border-radius: 10px;
-  box-shadow: inset 0 0 5px 5px rgb(194, 85, 85);
-  transform: scale(1.05);
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition-duration: 1s;
+  box-shadow: inset 0 0 5px 5px olive;
+  transform: rotate(360deg);
 }
 
 .image-in-list {
@@ -86,7 +84,7 @@
   opacity: 1;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: scale(1.01);
+  transform: rotate(360deg);
 }
 
 .delete-button,
@@ -95,7 +93,6 @@
   width: 20px;
   height: 20px;
   border: none;
-  padding-right: 5px;
 }
 .delete-button {
   background-image: url(./picturedatabase/close.png);
@@ -163,9 +160,7 @@
   height: 95%;
   margin: auto;
 }
-.id-div {
-  display: none;
-}
+
 .film-title__wrap {
   height: 40px;
   width: 80%;

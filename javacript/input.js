@@ -1,5 +1,5 @@
 import { Film } from "./film.js";
-import { addMovie } from "./data.js";
+import { addFilm, deleteFilm } from "./data.js";
 import { getFilms } from "./data.js";
 
 let counter = 3;
@@ -13,10 +13,58 @@ function createFilm() {
 
   let film = new Film(id, name, description, note, image);
 
-  addMovie(film);
+  addFilm(film);
 
   let form = document.getElementById("addForm");
   form.style.display = "none";
+
+  const img = document.createElement("img");
+  const li = document.createElement("li");
+  const rateNameDiv = document.createElement("div");
+  const rateDiv = document.createElement("div");
+  const nameDiv = document.createElement("div");
+  const buttonDiv = document.createElement("div");
+  const delButton = document.createElement("button");
+  const editButton = document.createElement("button");
+
+  li.className = "film-in-list";
+  let listOfFilm = document.getElementById("main-list");
+  li.setAttribute("data-id", film.id);
+  li.addEventListener("click", renderCartFilm);
+  listOfFilm.appendChild(li);
+
+  img.className = "image-in-list";
+  img.setAttribute("data-id", film.id);
+  img.src = film.image;
+  li.appendChild(img);
+
+  rateNameDiv.className = "rate-name-div";
+  rateNameDiv.setAttribute("data-id", film.id);
+  li.appendChild(rateNameDiv);
+
+  nameDiv.className = "name-div";
+  nameDiv.setAttribute("data-id", film.id);
+  nameDiv.innerHTML = film.name;
+  rateNameDiv.appendChild(nameDiv);
+
+  rateDiv.className = "rate-div";
+  rateDiv.setAttribute("data-id", film.id);
+  rateNameDiv.appendChild(rateDiv);
+
+  buttonDiv.className = "button-div";
+  buttonDiv.setAttribute("data-id", film.id);
+  li.appendChild(buttonDiv);
+
+  delButton.className = "delete-button";
+  delButton.setAttribute("data-id", film.id);
+  buttonDiv.appendChild(delButton);
+  delButton.addEventListener("click", deleteFilmFromList);
+
+  editButton.className = "edit-button";
+  editButton.setAttribute("data-id", film.id);
+  buttonDiv.appendChild(editButton);
+
+  document.querySelector(".id-div").innerHTML = film.id;
 
   counter++;
 }
@@ -24,7 +72,6 @@ function createFilm() {
 function addToSidebar() {
   getFilms().forEach((item) => {
     const img = document.createElement("img");
-    const button = document.createElement("button");
     const li = document.createElement("li");
     const rateNameDiv = document.createElement("div");
     const rateDiv = document.createElement("div");
@@ -32,40 +79,47 @@ function addToSidebar() {
     const buttonDiv = document.createElement("div");
     const delButton = document.createElement("button");
     const editButton = document.createElement("button");
+    const divId = document.createElement("div");
 
     li.className = "film-in-list";
     let listOfFilm = document.getElementById("main-list");
-    li.setAttribute("data-id", `${item.id}`);
+    li.setAttribute("data-id", item.id);
     li.addEventListener("click", renderCartFilm);
     listOfFilm.appendChild(li);
 
+    divId.id = "id-div";
+    li.appendChild(divId);
+    divId.setAttribute("data-id", item.id);
+
     img.className = "image-in-list";
-    img.setAttribute("data-id", `${item.id}`);
+    img.setAttribute("data-id", item.id);
     li.appendChild(img);
 
     rateNameDiv.className = "rate-name-div";
-    rateNameDiv.setAttribute("data-id", `${item.id}`);
+    rateNameDiv.setAttribute("data-id", item.id);
     li.appendChild(rateNameDiv);
 
     nameDiv.className = "name-div";
-    nameDiv.setAttribute("data-id", `${item.id}`);
+    nameDiv.setAttribute("data-id", item.id);
     rateNameDiv.appendChild(nameDiv);
 
     rateDiv.className = "rate-div";
-    rateDiv.setAttribute("data-id", `${item.id}`);
+    rateDiv.setAttribute("data-id", item.id);
     rateNameDiv.appendChild(rateDiv);
 
     buttonDiv.className = "button-div";
-    buttonDiv.setAttribute("data-id", `${item.id}`);
+    buttonDiv.setAttribute("data-id", item.id);
     li.appendChild(buttonDiv);
 
     delButton.className = "delete-button";
-    delButton.setAttribute("data-id", `${item.id}`);
+    delButton.setAttribute("data-id", item.id);
     buttonDiv.appendChild(delButton);
+    delButton.addEventListener("click", deleteFilmFromList);
 
     editButton.className = "edit-button";
-    editButton.setAttribute("data-id", `${item.id}`);
+    editButton.setAttribute("data-id", item.id);
     buttonDiv.appendChild(editButton);
+    editButton.addEventListener("click", editCart);
 
     img.src = item.image;
     nameDiv.innerHTML = item.name;
@@ -74,15 +128,46 @@ function addToSidebar() {
 
 function renderCartFilm(e) {
   let chosenFilm = getFilms().find((item) => item.id == e.target.dataset.id);
-  document.body.querySelector(".film-title").innerHTML = chosenFilm.name;
+  document.body.querySelector(".film-title").value = chosenFilm.name;
   document.body.querySelector(".film-description").innerHTML =
     chosenFilm.description;
   document.body.querySelector(".film-note").innerHTML = chosenFilm.note;
   document.body.querySelector(".film-image").src = chosenFilm.image;
 }
 
-function deleteFilmFromList(e) {
-  let move = getFilms().find;
+function deleteFilmFromList(event) {
+  event.stopPropagation();
+  let film = event.target.dataset.id;
+  deleteFilm(film);
+  let deletedLi = event.target.parentNode.parentNode;
+  document.getElementById("main-list").removeChild(deletedLi);
+  console.log(document.querySelector(".save-button").dataset.id);
+}
+
+function editCart(event) {
+  let chosenFilm = getFilms().find(
+    (item) => item.id == event.target.dataset.id
+  );
+
+  document.querySelector(".new-url").style = "display: block;";
+  document.querySelector(".save-button").style = "display: block;";
+
+  document.body.querySelector(".film-title").removeAttribute("readonly");
+  document.body.querySelector(".film-title").style =
+    "border: 2px solid black; background-color:#B3FFFF";
+
+  document.body.querySelector(".film-description").removeAttribute("readonly");
+  document.body.querySelector(".film-description").style =
+    "border: 2px solid black; background-color:#B3FFFF";
+
+  document.body.querySelector(".film-note").removeAttribute("readonly");
+  document.body.querySelector(".film-note").style =
+    "border: 2px solid black; background-color:#B3FFFF";
+}
+
+function saveChanges(event) {
+  
 }
 
 document.addEventListener("DOMContentLoaded", addToSidebar);
+document.getElementById("create-film").addEventListener("click", createFilm);

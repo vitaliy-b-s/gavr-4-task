@@ -1,6 +1,6 @@
 import { Film } from "./film.js";
 
-let listOfMovies = [
+let listOfFilms = [
   new Film(
     "1",
     "Властелин колец",
@@ -17,16 +17,17 @@ let listOfMovies = [
   ),
 ];
 
-function addMovie(film) {
-  listOfMovies.push(film);
+function addFilm(film) {
+  listOfFilms.push(film);
 }
 
-function deleteMovie(movie) {
-  listOfMovies.pop(movie);
+function deleteFilm(film) {
+  let indexOfDeletingFilm = listOfFilms.findIndex((item) => item.id == film);
+  listOfFilms.splice(indexOfDeletingFilm, 1);
 }
 
 function getFilms() {
-  return listOfMovies.slice();
+  return listOfFilms.slice();
 }
 
-export { addMovie, deleteMovie, getFilms };
+export { addFilm, deleteFilm, getFilms };

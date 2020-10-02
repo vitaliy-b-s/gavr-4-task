@@ -37,6 +37,11 @@
   height: 30px;
 }
 
+.search-text {
+  width: 100%;
+  height: 100%;
+}
+
 .item-list {
   margin: 10px 0px 0px 3%;
   border: 1px solid black;
@@ -66,10 +71,11 @@
 .film-in-list:hover {
   border: 1px solid #000;
   border-radius: 10px;
-  box-shadow: inset 0 0 5px 5px rgb(194, 85, 85);
+  box-shadow: inset 0 0 2px 2px rgb(219, 30, 30);
   transform: scale(1.05);
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
+  box-sizing: content-box;
 }
 
 .image-in-list {

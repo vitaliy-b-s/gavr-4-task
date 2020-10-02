@@ -35,4 +35,10 @@ function replaceFilm(film) {
   listOfFilms.splice(indexOfDeletingFilm, 1, film);
 }
 
-export { addFilm, deleteFilm, getFilms, replaceFilm };
+function searchFilms(title) {
+  return listOfFilms.filter((film) =>
+    film.name.toLowerCase().includes(title.toLowerCase())
+  );
+}
+
+export { addFilm, deleteFilm, getFilms, replaceFilm, searchFilms };

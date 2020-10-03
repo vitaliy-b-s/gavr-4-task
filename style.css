@@ -1,227 +1,330 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 
 /* Общая обертка приложения */
 
 .app__wrap {
-  display: flex;
-  margin: auto;
-  height: 750px;
-  width: 80%;
+    display: flex;
+    margin: auto;
+    height: 750px;
+    width: 90%;
 }
+
 
 /* Обертка списка фильмов */
 
 .catalog__wrap {
-  margin: 10px 0px 0px 3%;
-  width: 25%;
-  height: 550px;
+    margin: 10px 0px 0px 3%;
+    width: 50%;
+    height: 600px;
+    border: 2.5px solid yellow;
+    border-radius: 40px;
+    background-color: hsl(0, 0%, 0%);
 }
+
 
 /* Обертка карточки */
 
 .content__wrap {
-  border: 1px solid #000;
-  margin: 10px 50px 0px 7%;
-  width: 60%;
-  height: 600px;
+    border: 2.5px solid yellow;
+    margin: 10px 0px 0px 7%;
+    width: 100%;
+    height: 600px;
+    border-radius: 40px;
 }
+
 
 /* Поле поиска и список */
 
 .search-field {
-  margin: 0px 0px 0px 3%;
-  border: 1px solid black;
-  width: 100%;
-  height: 30px;
+    margin: 20px auto;
+    border: none;
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
 }
 
 .search-text {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(218, 224, 150);
+    border: none;
+    box-shadow: inset 0 0 2px 2px rgb(227, 240, 84);
+    border-radius: 50px;
+    outline: none;
+    padding-left: 20px;
+    font-size: 1.3em;
 }
 
 .item-list {
-  margin: 10px 0px 0px 3%;
-  border: 1px solid black;
-  width: 100%;
-  height: 560px;
+    width: 100%;
+    height: 560px;
 }
 
 .items-list {
-  display: f;
-  width: 100%;
-  height: 460px;
-  overflow: auto;
-  padding: 10px;
+    width: 100%;
+    height: 460px;
+    overflow: auto;
+    padding: 0px;
+    margin: 0px auto;
 }
 
 .film-in-list {
-  margin-top: 10px;
-  list-style-type: none;
-  padding: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+    margin: 10px auto;
+    color: wheat;
+    width: 90%;
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid yellow;
+    border-radius: 10px;
 }
 
 .film-in-list:hover {
-  border: 1px solid #000;
-  border-radius: 10px;
-  box-shadow: inset 0 0 2px 2px rgb(219, 30, 30);
-  transform: scale(1.05);
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition-duration: 0.5s;
-  box-sizing: content-box;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px 2px yellow;
+    transform: scale(1.05);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-duration: 0.5s;
+    box-sizing: content-box;
 }
 
 .image-in-list {
-  width: 30%;
-  height: auto;
-  max-height: 100px;
-  padding: 5px;
-}
-.button-div {
-  opacity: 0;
+    width: 30%;
+    height: auto;
+    max-height: 100px;
+    padding: 5px;
 }
 
-.film-in-list:hover > .button-div {
-  opacity: 1;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: scale(1.01);
+.button-div {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.film-in-list:hover>.button-div {
+    opacity: 1;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: scale(1.01);
 }
 
 .delete-button,
 .edit-button {
-  margin: 0px 10px;
-  width: 20px;
-  height: 20px;
-  border: none;
-  padding-right: 5px;
-}
-.delete-button {
-  background-image: url(./picturedatabase/close.png);
+    margin-right: 5px;
+    width: 15px;
+    height: 20px;
+    border: none;
 }
 
-.edit-button {
-  background-image: url(./picturedatabase/edit.png);
-}
 
 /* Кнопки добавления */
 
 .buttons__wrap {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn {
-  margin: 0px 30px;
-  height: 30px;
+    margin: 0px 30px;
+    height: 40px;
+    border-radius: 50%;
+    width: 40px;
+    font-size: 1.8em;
+    background-color: gold;
+    border: none;
+    box-shadow: inset 0 0 2px 2px rgb(227, 240, 84);
+    outline: none;
+    color: black;
+    font-weight: bold;
 }
+
+.btn:active {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
+
 
 /* Форма добавления позиции */
 
 .adding-form__wrap {
-  margin: 20px auto;
-  position: absolute;
-  display: none;
-  border: 1px solid #000;
-  height: 550px;
-  background-color: aqua;
-  width: 25%;
-  left: 50%;
+    margin: 20px auto;
+    position: absolute;
+    display: none;
+    border: none;
+    border-radius: 20px;
+    height: 550px;
+    background-color: rgb(224, 204, 91);
+    width: 25%;
+    left: 55%;
 }
 
 .adding-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: auto;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
 }
+
 
 /* Элементы формы */
 
 .label-title {
-  margin-top: 20px;
+    margin-top: 20px;
+}
+
+.adding-form-title {
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    outline: none;
+    color: wheat;
+    font-size: 1.05em;
+    padding-left: 5px;
 }
 
 .description,
 .note {
-  height: 100px;
-  resize: none;
+    height: 100px;
+    resize: none;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: wheat;
+    font-size: 1.05em;
+    padding-left: 5px;
 }
 
-.submit-button {
-  margin-top: 20px;
+.url-title {
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: wheat;
+    font-size: 1.05em;
+    padding-left: 5px;
 }
+
+.create-button {
+    margin-top: 10px;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: wheat;
+    font-size: 1.05em;
+}
+
 
 /*карточка фильма в главном меню*/
 
 .film-cart__wrap {
-  width: 95%;
-  height: 95%;
-  margin: auto;
+    width: 95%;
+    height: 95%;
+    margin: auto;
 }
+
 .id-div {
-  display: none;
+    display: none;
 }
+
 .film-title__wrap {
-  height: 40px;
-  width: 80%;
-  border: 1px solid #000;
-  margin: 10px auto;
+    height: 40px;
+    width: 80%;
+    border: 1px solid #000;
+    margin: 10px auto;
 }
 
 .film-title {
-  margin: 0px auto;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(218, 224, 150);
+    border: none;
+    box-shadow: inset 0 0 2px 2px rgb(227, 240, 84);
+    border-radius: 50px;
+    outline: none;
+    font-size: 1.6em;
 }
 
 .film-image__wrap {
-  height: 300px;
-  width: 40%;
-  margin: 10px auto;
-  border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 40%;
+    margin: 10px auto;
+    border: 1px solid #000;
 }
 
 .film-image {
-  height: auto;
-  width: 100%;
-  max-height: 300px;
+    height: auto;
+    width: 100%;
+    max-height: 300px;
 }
 
 .new-url {
-  color: gray;
-  font-style: italic;
-  display: none;
-  margin: auto;
-  border: 2px solid #000;
-  background-color: #b3ffff;
+    color: rgb(22, 21, 21);
+    font-style: italic;
+    height: 40px;
+    display: none;
+    margin: auto;
+    border: 2px solid #000;
+    background-color: rgb(104, 204, 113);
 }
+
 .film-description {
-  width: 100%;
-  height: 80px;
-  resize: none;
-  border: 1px solid #000;
+    width: 100%;
+    height: 80px;
+    resize: none;
+    border: 1px solid #000;
+    background-color: rgb(218, 224, 150);
+    border: none;
+    box-shadow: inset 0 0 2px 2px rgb(227, 240, 84);
+    border-radius: 10px;
 }
 
 .film-note {
-  width: 100%;
-  height: 60px;
-  resize: none;
-  border: 1px solid #000;
+    width: 100%;
+    height: 60px;
+    resize: none;
+    border: 1px solid #000;
+    background-color: rgb(218, 224, 150);
+    border: none;
+    box-shadow: inset 0 0 2px 2px rgb(227, 240, 84);
+    border-radius: 10px;
+}
+
+.comments {
+    color: wheat;
+    font-size: 1.3em;
 }
 
 .save-button {
-  display: none;
-  margin: auto;
+    display: none;
+    margin: auto;
+}
+
+.saved-class {
+    background-color: rgb(218, 224, 150);
+    color: black;
 }

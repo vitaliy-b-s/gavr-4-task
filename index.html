@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />\
+    <link rel="stylesheet" href="./style/style.css" />
+    \
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div class="app__wrap">
-        <div class="catalog__wrap">
-            <div class="search-field">
-                <input type="text" class="search-text" />
-            </div>
-            <div class="item-list">
-                <ul class="items-list" id="main-list"></ul>
-                <div class="buttons__wrap">
-                    <button class="adding-movie btn" onclick="showForm()">
-              +
-            </button>
-                </div>
-            </div>
+      <div class="catalog__wrap">
+        <div class="search-field">
+          <input type="text" class="search-text" value="Поиск...." /
+          onfocus="clearForm()", onblur="fillForm()">
         </div>
-        <div class="content__wrap">
-            <div class="adding-form__wrap" id="addForm">
-                <form class="adding-form" id="main-form" name="mainForm">
-                    <label class="label-title" for="title"><b>Название фильма</b></label
+        <div class="item-list">
+          <ul class="items-list" id="main-list"></ul>
+          <div class="buttons__wrap">
+            <button class="adding-movie btn" onclick="showForm()">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="content__wrap">
+        <div class="adding-form__wrap" id="addForm">
+          <form class="adding-form" id="main-form" name="mainForm">
+            <label class="label-title" for="title"
+              ><b>Название фильма</b></label
             >
-            <input type="text" name="title" class = "adding-form-title" required />
+            <input
+              type="text"
+              name="title"
+              class="adding-form-title"
+              required
+            />
 
             <label class="label-title" for="description"
               ><b>Описание фильма</b></label
@@ -42,38 +45,55 @@
             ></textarea>
 
             <label class="label-title" for="note"><b>Примечание</b></label>
-                    <textarea class="note" name="note"></textarea>
+            <textarea class="note" name="note"></textarea>
 
-                    <label class="label-title" for="image"><b>URL фото</b></label>
-                    <input type="text" name="image" class="url-title" />
+            <label class="label-title" for="image"><b>URL фото</b></label>
+            <input type="text" name="image" class="url-title" />
 
-                    <input type="button" value="Сохранить" class="create-button" id="create-film" />
-                    <input type="button" value="Очистить" class="create-button" id="clear-form" />
-                    <input type="button" value="Закрыть форму" class="create-button" id="close-form" />
-                </form>
-            </div>
-
-            <div class="film-cart__wrap">
-                <div class="id-div"></div>
-                <div class="film-title__wrap">
-                    <input type="text" class="film-title" readonly />
-                </div>
-                <div class="film-image__wrap">
-                    <img class="film-image" />
-                    <input type="text" class="new-url" value="Введите новый URL" />
-                </div>
-                <label for="film-description" class="comments">Описание</label>
-                <textarea name="film-description" class="film-description" readonly></textarea>
-                <label for="film-note" class="comments">Примечание</label>
-                <textarea class="film-note" readonly></textarea>
-                <button class="save-button">Сохранить</button>
-            </div>
+            <input
+              type="button"
+              value="Сохранить"
+              class="create-button"
+              id="create-film"
+            />
+            <input
+              type="button"
+              value="Очистить"
+              class="create-button"
+              id="clear-form"
+            />
+            <input
+              type="button"
+              value="Закрыть форму"
+              class="create-button"
+              id="close-form"
+            />
+          </form>
         </div>
-    </div>
-    <script src="./javacript/script.js"></script>
-    <script type="module" src="./javacript/data.js"></script>
-    <script type="module" src="/javacript/input.js"></script>
-    <script type="module" src="/javacript/film.js"></script>
-</body>
 
+        <div class="film-cart__wrap">
+          <div class="id-div"></div>
+          <div class="film-title__wrap">
+            <input type="text" class="film-title" readonly />
+          </div>
+          <div class="film-image__wrap">
+            <img class="film-image" />
+            <input type="text" class="new-url" value="Введите новый URL" />
+          </div>
+          <label for="film-description" class="comments">Описание</label>
+          <textarea
+            name="film-description"
+            class="film-description"
+            readonly
+          ></textarea>
+          <label for="film-note" class="comments">Примечание</label>
+          <textarea class="film-note" readonly></textarea>
+          <button class="save-button">Сохранить</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+
+    <script type="module" src="/js/input.js"></script>
+  </body>
 </html>

@@ -3,17 +3,20 @@ function showForm() {
   form.style.display = "block";
 }
 
-function clearForm() {
-  document.forms.mainForm.title.value = "";
-  document.forms.mainForm.description.value = "";
-  document.forms.mainForm.note.value = "";
-  document.forms.mainForm.image.value = "";
-}
+
 
 function closeForm() {
   let form = document.getElementById("addForm");
   form.style.display = "none";
 }
 
-document.getElementById("clear-form").addEventListener("click", clearForm);
+function clearForm() {
+  document.querySelector(".search-text").value = "";
+}
+
+function fillForm() {
+  document.querySelector(".search-text").value = "Поиск...";
+}
+
+
 document.getElementById("close-form").addEventListener("click", closeForm);
